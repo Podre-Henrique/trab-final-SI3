@@ -7,7 +7,7 @@ import numpy as np
 assets = "./assets/"
 carImage = assets+"c.png" # imagem com redução de escala
 mapImage = assets+"m.png" # imagem com redução de escala
-arrayFile = "higanbana.npy"
+aiFile = "ai.npy"
 
 # Alterei a resolução devido a problemas com meu monitor
 INITPOS = [830*0.7, 920*0.7]
@@ -365,10 +365,10 @@ def treina():
         for ind, fit in zip(invalids, fitnesses):
             ind.fitness.values = fit
             if ind.fitness.values[0] > PontoParada:
-                pedro = np.array(ind)  # Transforma em ndarray
-                np.save(arrayFile, pedro)  # Salva a IA treinada
+                ai = np.array(ind)  # Transforma em ndarray
+                np.save(aiFile, ai)  # Salva a IA treinada
                 print(f"\n\nTreinada com sucesso com {gen} gerações")
-                print(f"IA salva como: balacheeta.npy")
+                print(f"IA salva como: {aiFile}")
                 return
 
         # Seleciona indivíduos para a próxima geração usando o método definido no toolbox
@@ -398,9 +398,9 @@ def treina():
 if __name__ == "__main__":
     # Tente carregar a IA treinada
     try:
-        pedro = np.load(arrayFile)
+        ai = np.load(aiFile)
         car = Car("Percorrendo com IA treinada")
         while True:
-            movimenta(car, pedro)
+            movimenta(car, ai)
     except Exception as e:  # Se não conseguir, treine a IA
         treina()

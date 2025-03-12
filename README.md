@@ -6,7 +6,7 @@ Este projeto implementa um sistema de aprendizado evolutivo usando algoritmos ge
 
 ### Tecnologias Utilizadas
 
-- Python 3.12+
+- Python
 - Bibliotecas:
   - `pygame` - Para simulação do ambiente e visualização
   - `numpy` - Para operações matemáticas e manipulação de arrays
@@ -31,9 +31,9 @@ Este projeto implementa um sistema de aprendizado evolutivo usando algoritmos ge
 ### Funcionamento
 
 O sistema irá:
-1. Tentar carregar uma IA já treinada (`higanbana.npy`)
+1. Tentar carregar uma IA já treinada (`ai.npy`)
 2. Caso não encontre, iniciará o treinamento automaticamente
-3. Após o treinamento, salvará o primeiro modelo a atingir o critério de parada alvo em `higanbana.npy`
+3. Após o treinamento, salvará o primeiro modelo a atingir o critério de parada alvo em `ai.npy`
 
 ### Estrutura do Projeto
 
